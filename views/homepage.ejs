@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/homepage.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Link to color pallet blue https://colorhunt.co/palette/5356ff378ce767c6e3dff5ff-->
+    <%- include('partials/header.ejs') %>
+    <div class="create-new">
+    <h2 class="new-tit-cont"> New Post <h2>
+        <form action="/newPost" method="POST" class="newPost">
+            <label for="title">Title</label>
+            <input type="text" maxlength=20 id="new-post-title" name="title" required>
+            <input type="text" id="username" name="username" value =<%= username %> hidden>
+            <label for="Content"></label>
+            <textarea type="text" id="new-content" name="content" required cols="40" rows="10">Write New Post.. </textarea>
+            <input class="btn" type="submit" value="Post">
+          </form>
+    </div>
+    <h2>Your Posts</h2>
+    <div class="posts-container">
+        <% if (Object.keys(locals.posts).length > 0){ %>
+    <% let keys = Object.keys(locals.posts);
+    for(let i = keys.length - 1; i>=0; i--){ 
+        post = posts[keys[i]];  %>
+        <div id = <%=post.id %> class="post-item">
+            <div class="border-post">
+                <h3 class="post-title"><%=post.title%></a></h3>
+                <p class="post-content"><%=post.content%></p>
+                <p class = "post-time">Posted on <%=post.date%> at <%=post.time%></p>
+                <hr>
+                <button type="button" class="btn btn-outline-update">Update</button>
+                <button id = <%=post.id %> type="button" class="btn btn-delete">Delete</button>
+            </div>
+        </div>
+    <% } %>
+    <% } else { %>
+        <p>No posts yet.</p>
+    <% } %>
+    </div>
+</body>
+<script> 
+    var username = <%=locals.username%>
+    </script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="jquery/homepage.js"></script>
+</html>

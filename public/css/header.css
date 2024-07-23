@@ -1,0 +1,52 @@
+h1{
+    text-align: center;
+    font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+.nav-grid-container{
+    height: 80px;
+    background-color: #DFF5FF !important;
+    display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+   gap: 50px;
+}
+.nav-item{
+    color: white;
+    padding: 10px;
+    border: none;
+    width: auto;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 50px;
+}
+
+.nav-button{
+    border-radius: 50px;
+    color:black !important;
+    width: 90px;
+    height: 30px;
+    font-size: 90%;
+    text-align: center;
+    background-color: #378CE7;
+    border-width: 1px;
+}
+.lamb-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+}
+.lamb-logo{
+    position: relative;
+    height: 100%;
+    margin-bottom: 0%;
+    
+}

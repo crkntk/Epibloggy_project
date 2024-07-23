@@ -1,0 +1,147 @@
+
+.newPost{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#new-content{
+    padding: 10px;
+    margin: 40px;
+    margin-top: 20px;
+}
+h2{
+    position: relative;
+    text-align: center;
+    font-family: "Rubik";
+    font-weight: 450;
+}
+.create-new{
+    border-width: 5px;
+    border-style: solid;
+    border-color: #5356FF;
+    width: 50%;
+    border-radius: 5px;
+    position: relative;
+    left: 25%;
+    right: 25%;
+    text-align: center;
+    margin-top: 20px;
+    background-color: white;
+}
+.btn{
+    margin: 5px;
+    padding: 5px;
+    background-color: #3586ff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+label{
+    font-size: 18px;
+    margin-bottom: 5px;
+    font-family: "Rubik";
+    font-weight: 400;
+}
+.new-tit-cont{
+    border-radius: 5px;
+    border-color: black;
+    
+    color: black;
+    margin: 50px;
+    margin-bottom: 20px;
+    
+}
+input{
+    background-color: #DFF5FF;
+}
+textarea{
+    background-color: #DFF5FF;
+}
+.posts-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+.border-post{
+    border-width: 2px;
+    border-color: #67C6E3;
+    border-style: solid;
+    width: 500px;
+    height: max-content;
+    background-color: white;
+    margin: auto;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    
+}
+.post-item{
+    height: fit-content;
+    width: auto;
+}
+.post-title{
+    font-size: 20px;
+    font-family: "Rubik";
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: 400;
+}
+.post-content{
+    font-size: 14px;
+    font-weight: 350;
+    font-family: "Rubik";
+    margin-bottom: 10px;
+    text-align: center;
+    width: 300px;
+    height: auto;
+    margin: 0px;
+    word-wrap: break-word;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+.post-time{
+    font-size: 12px;
+    font-weight: 300;
+    font-family: "Rubik";
+    margin-bottom: 0px;
+    text-align: center;
+    font-style: italic;
+    text-align: end;
+    margin-right: 5px;
+    margin-top: 50px;
+}
+hr{
+    color: #67C6E3;
+    background-color: #67C6E3;
+}
+.btn{
+    border-radius: 15px;
+    font-family: "Rubik";
+    border: 2px solid;
+}
+.btn-outline-update{
+    padding : 5px;
+    border-radius: 15px;
+    background-color: white;
+    margin-left: 10px;
+    color:#378CE7 ;
+    border: 2px solid #378CE7;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: "Rubik";
+}
+
+.btn-delete{
+    padding : 5px;
+    border-radius: 15px;
+    background-color: white;
+    margin-left: 5px;
+    color:#D71313 ;
+    border: 2px solid #D71313;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: "Rubik";
+}
+

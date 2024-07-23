@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+</head>
+<!-- Link to color pallet blue https://colorhunt.co/palette/5356ff378ce767c6e3dff5ff -->
+<body>
+    <div class="lamb-container">
+    <img src="images/wid_lamb.png" class="lamb-logo" width="200px" >
+    </div>
+    <% if (locals.username){ %>
+    <h1 id= <%=username%> > Welcome to EPIBLOGGY <%=username%> </h1>
+    <% } else { %>
+    <h1> Welcome to EPIBLOGGY </h1>
+    <% } %>
+    <div class="nav-grid-container">
+        <div class="nav-item">
+        <button href="http://" class="nav-button">Home</button>
+        </div>
+        <div class="nav-item">
+        <button href="http://" class="nav-button" >About</button>
+        </div>
+        <div class="nav-item">
+        <button href="http://" class="nav-button">Help</button>
+        </div>
+    </div>
+</body>
+</html>
