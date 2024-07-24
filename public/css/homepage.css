@@ -144,4 +144,11 @@ hr{
     font-weight: 400;
     font-family: "Rubik";
 }
-
+.btn-delete-modal{
+    background-color: #D71313;
+    color: white;
+}
+.btn-cancel-modal{
+    background-color: gray !important;
+    color: white;
+}

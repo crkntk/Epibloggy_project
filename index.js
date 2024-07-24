@@ -49,11 +49,7 @@ app.delete('/delete-post', (req, res, next) => {
     
     TempUsers[req.body["username"]].deletePost(req.body["id"]);
     console.log(TempUsers[req.body["username"]].posts);
-    res.redirect(__dirname + "/views/homepage.ejs",{
-        username: req.body["username"],
-        posts: TempUsers[req.body["username"]].posts
-    });
-    next();
+    res.send(req.body["id"]).json();
   });
 
 let TempUsers = {
