@@ -135,15 +135,71 @@ $(".btn-delete").on("click",function() {
           }
 
 
-
+            if(updatedContent || updatedtitle){
+                const dataUpdate = {
+                    id: id,
+                    title: updatedtitle,
+                    content: updatedContent,
+                    username: usern
+                };
             $.ajax({
                 type: "PUT",
-                url: url,
+                url: "update-post",
+                data: dataUpdate,
                 success: function (data) {
                     console.log(data);
-                    $("#" +  id + ".post-item" + " .post-title").text(updated_title);
-                    $("#" +  id + ".post-item" + " .post-content").text(updated_content);
+                   // $("#" +  id + ".post-item" + " .post-title").text(updatedtitle);
+                    //$("#" +  id + ".post-item" + " .post-content").text(updatedContent);
+
+                    console.log($("#" +  data + ".post-item"));
+                    
+                      Swal.fire({
+                        title: "Updated!",
+                        text: "Your post has been updated.",
+                        icon: "success",
+                        showConfirmButton: false,
+                        timer:1500
+                      });
+
+                      if(updatedtitle){
+                      setTimeout(function() {
+                      $("#" +  data + ".post-item" + " .post-title" ).animate({
+                        opacity: 0.25,
+                      }, 1500, function() {
+                        // Animation complete.
+                        $("#" +  data + ".post-item" + " .post-title" ).text(updatedtitle);
+                        $("#" +  data + ".post-item" + " .post-title" ).animate({
+                            opacity: 1,
+                          }, 1500, function() {
+                            // Animation complete.
+                            
+                          });
+                      });
+                    },2000);
+                }
+                if(updatedContent){
+                    setTimeout(function() {
+                        $("#" +  data + ".post-item" + " .post-content" ).animate({
+                          opacity: 0.25,
+                        }, 1500, function() {
+                          // Animation complete.
+                          $("#" +  data + ".post-item" + " .post-content" ).text(updatedContent);
+                          $("#" +  data + ".post-item" + " .post-content" ).animate({
+                              opacity: 1,
+                            }, 1500, function() {
+                              // Animation complete.
+                              
+                            });
+                        });
+                      },2000);
+
+
+                }
+
+
+
                 }
             });
-
+        }
+        
       });

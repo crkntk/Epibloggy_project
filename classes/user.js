@@ -16,5 +16,13 @@ class user {
     deletePost(postId){
       delete this.posts[postId];
     }
+    updatePost(Newtitle,Newcontent,id) {
+      if(Newtitle ){
+        this.posts[id].title = Newtitle;
+      }
+      if(Newcontent){
+        this.posts[id].content = Newcontent;
+      }
+    }
   }
   export {user};

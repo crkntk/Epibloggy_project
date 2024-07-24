@@ -52,6 +52,12 @@ app.delete('/delete-post', (req, res, next) => {
     res.send(req.body["id"]).json();
   });
 
+  app.put('/update-post', (req, res, next) => {
+    TempUsers[req.body["username"]].updatePost(req.body["title"], req.body["content"], req.body["id"]);
+    console.log(TempUsers[req.body["username"]].posts);
+    res.send(req.body["id"]).json();
+  });
+
 let TempUsers = {
     "user1": new user("user1","I","origami@gmail.com",1),
     "user2": new user("user2", "ILovePython"),
