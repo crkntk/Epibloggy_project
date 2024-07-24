@@ -94,7 +94,7 @@ $(".btn-delete").on("click",function() {
     });
 
 
-      $(".btn-outline-update").on("click", function (){
+      $(".btn-outline-update").on("click", async function (){
         var usern = $("h1").attr("id");
         var id = $(this).attr("id");
         var url = "/edit-post/" + id;
@@ -103,7 +103,23 @@ $(".btn-delete").on("click",function() {
         //var updated_title = prompt("Enter new title:", title);
         //var updated_content = prompt("Enter new content:", content);
         
-        const { value: text } =  Swal.fire({
+        const { value: updatedtitle } =  await Swal.fire({
+            title: "Updated Title",
+            input: "text",
+            inputLabel: "New Title",
+            inputPlaceholder: "Title",
+            inputValue: title,
+            confirmButtonText: "next",
+            inputValue: title,
+            inputAttributes: {
+              "aria-label": "Type your message here"
+            },
+            showCancelButton: true
+          });
+          if (updatedtitle) {
+            Swal.fire("Updated title is: " + updatedtitle);
+          }
+        const { value: updatedContent } = await Swal.fire({
             input: "textarea",
             inputLabel: "Content",
             inputPlaceholder: "Update content text here...",
@@ -114,9 +130,10 @@ $(".btn-delete").on("click",function() {
             },
             showCancelButton: true
           });
-          if (text) {
-            Swal.fire(text);
+          if (updatedContent) {
+            Swal.fire(updatedContent);
           }
+
 
 
             $.ajax({
