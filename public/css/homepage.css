@@ -18,7 +18,7 @@ h2{
 .create-new{
     border-width: 5px;
     border-style: solid;
-    border-color: #5356FF;
+    border-color: #67C6E3;
     width: 50%;
     border-radius: 5px;
     position: relative;
@@ -27,6 +27,7 @@ h2{
     text-align: center;
     margin-top: 20px;
     background-color: white;
+   
 }
 .btn{
     margin: 5px;
@@ -154,4 +155,8 @@ hr{
 }
 .title-label-update{
     text-align: center;
+}
+.post-btn{
+    background-color: #5356FF;
+    opacity: 1;
 }

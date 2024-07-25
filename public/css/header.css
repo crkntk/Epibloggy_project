@@ -28,13 +28,16 @@ h1{
 
 .nav-button{
     border-radius: 50px;
-    color:black !important;
+    color:white !important;
     width: 90px;
     height: 30px;
     font-size: 90%;
     text-align: center;
     background-color: #378CE7;
     border-width: 1px;
+    font-family: "Rubik";
+    border-style: double solid transparent;
+    box-shadow: 50px;
 }
 .lamb-container{
     display: flex;

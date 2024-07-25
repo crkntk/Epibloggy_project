@@ -60,7 +60,7 @@ $(".btn-delete").on("click",function() {
                     
                       Swal.fire({
                         title: "Deleted!",
-                        text: "Your file has been deleted.",
+                        text: "Your post has been deleted.",
                         icon: "success",
                         showConfirmButton: false,
                         timer:1500
@@ -175,7 +175,7 @@ $(".btn-delete").on("click",function() {
                             
                           });
                       });
-                    },2000);
+                    },1500);
                 }
                 if(updatedContent){
                     setTimeout(function() {
@@ -191,7 +191,7 @@ $(".btn-delete").on("click",function() {
                               
                             });
                         });
-                      },2000);
+                      },1500);
 
 
                 }
