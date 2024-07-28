@@ -4,6 +4,17 @@ h1{
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
+  filter: drop-shadow(0 0 40px var(--clr));
+  inset: 0;
+  background-color: #DFF5FF;
+  width: fit-content;
+  position: relative;
+  left: auto;
+  border-radius: 10px;
+}
+.title-cont{
+    display: flex;
+    justify-content: center;
 }
 .nav-grid-container{
     height: 80px;
@@ -51,5 +62,6 @@ h1{
     position: relative;
     height: 100%;
     margin-bottom: 0%;
-    
+    opacity: 1;
+    border-radius: 200px;
 }

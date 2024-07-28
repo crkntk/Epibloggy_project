@@ -15,9 +15,13 @@
     <img src="images/wid_lamb.png" class="lamb-logo" width="200px" >
     </div>
     <% if (locals.username){ %>
-    <h1 id= <%=username%> > Welcome to EPIBLOGGY <%=username%> </h1>
+        <div class="title-cont">
+            <h1 id= <%=username%> > Welcome to EPIBLOGGY <%=username%> </h1>
+        </div>
     <% } else { %>
-    <h1> Welcome to EPIBLOGGY </h1>
+        <div class="title-cont">
+            <h1> Welcome to EPIBLOGGY </h1>
+        </div>
     <% } %>
     <div class="nav-grid-container">
         <div class="nav-item">
