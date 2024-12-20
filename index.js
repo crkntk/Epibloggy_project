@@ -35,7 +35,6 @@ app.post('/check', (req, res) => {
     }
     });
 app.post('/newPost', (req, res) => {
-    //console.log(TempUsers[req.body["username"]]);
     TempUsers[req.body["username"]].createPost(req.body["title"],req.body["content"]);
     res.render(__dirname + "/views/homepage.ejs",{
         username: req.body["username"],
@@ -48,13 +47,11 @@ app.listen(port, function(){
 app.delete('/delete-post', (req, res, next) => {
     
     TempUsers[req.body["username"]].deletePost(req.body["id"]);
-    console.log(TempUsers[req.body["username"]].posts);
     res.send(req.body["id"]).json();
   });
 
   app.put('/update-post', (req, res, next) => {
     TempUsers[req.body["username"]].updatePost(req.body["title"], req.body["content"], req.body["id"]);
-    console.log(TempUsers[req.body["username"]].posts);
     res.send(req.body["id"]).json();
   });
 
@@ -65,3 +62,4 @@ let TempUsers = {
     "user4": new user("user4", "ILoveJava"),
     "user5": new user("user5", "ILoveRuby")
 }; // temporary storage should only hold about 5 users before sending to database
+//This is used while we set up the database

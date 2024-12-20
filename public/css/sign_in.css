@@ -5,6 +5,8 @@
     justify-content: center;
 }
 .signIn-container{
+    align-self: center !important;
+    justify-self: center !important;
     width: 300px;
     padding: 20px;
     height: 200px;
