@@ -13,6 +13,14 @@ $(".btn-delete").hover(
         $(this).css("color", "#D71313");
     }
 );
+$(".btn-delete").on("mouseenter",function() {
+        $(this).css("background-color", "#D71313");
+        $(this).css("color", "white");
+    }).on("mouseleave", function() {
+        $(this).css("background-color", "white");
+        $(this).css("color", "#D71313");
+    }
+);
 
 $(".btn-outline-update").hover(
     function() {
@@ -93,6 +101,45 @@ $(".btn-delete").on("click",function() {
       });
     });
 
+    $("#new-post-btn").on("click", async function (){
+      var usern = $("h1").attr("id");
+      var url = "/newPost";
+      var title = $("#"+"new-post-title").val();
+      var content = $("#" + "new-content").val();
+      console.log(title, content);
+      var dataPost = {
+        id: "",
+        title: title,
+        content: content,
+        username: usern
+    };
+      $.ajax({
+        type: "POST",
+        url: url,
+        data: dataPost,
+        success: function (data) {
+            console.log(data);
+           const postData = `<div id = "${data.id}" class="post-item" style="opacity: 0">
+                <div class="border-post">
+                    <h3 class="post-title">${data.title}</a></h3>
+                    <p class="post-content">${data.content}</p>
+                    <p class = "post-time">Posted on ${data.date} at ${data.time}</p>
+                    <hr>
+                    <button id = "${data.id}" type="button" class="btn btn-outline-update">Update</button>
+                    <button id = "${data.id}"  type="button" class="btn btn-delete">Delete</button>
+                </div>
+        </div>`;
+        //$("#"+"new-post-title").val("");
+         // $("#" + "new-content").val("Write New Post..");
+            $(".posts-container").prepend(postData);
+              $("#" +  data.id ).animate({
+                opacity: 1,
+              }, 1500)
+           
+        }
+    });
+    });
+  
 
       $(".btn-outline-update").on("click", async function (){
         var usern = $("h1").attr("id");

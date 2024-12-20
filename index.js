@@ -35,11 +35,9 @@ app.post('/check', (req, res) => {
     }
     });
 app.post('/newPost', (req, res) => {
-    TempUsers[req.body["username"]].createPost(req.body["title"],req.body["content"]);
-    res.render(__dirname + "/views/homepage.ejs",{
-        username: req.body["username"],
-        posts: TempUsers[req.body["username"]].posts
-    });
+    const postId = TempUsers[req.body["username"]].createPost(req.body["title"],req.body["content"]);
+    res.send(postId);
+
 });
 app.listen(port, function(){
     console.log(`Server is running on port ${port}`);

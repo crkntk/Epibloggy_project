@@ -11,7 +11,11 @@ class user {
     createPost(title,content) {
       let randomPostId = nanoid();
       let currDate = new Date();
-      this.posts[randomPostId] = new post(title, currDate ,content,5,randomPostId);
+      const newPost = new post(title, currDate ,content,5,randomPostId);
+      this.posts[randomPostId] = newPost;
+      //at some point make sure the id is not repeated or just use database to make sure its unique
+
+      return newPost;
     }
     deletePost(postId){
       delete this.posts[postId];

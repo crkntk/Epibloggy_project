@@ -14,14 +14,14 @@
     <%- include('partials/header.ejs') %>
     <div class="create-new">
     <h2 class="new-tit-cont"> New Post <h2>
-        <form action="/newPost" method="POST" class="newPost">
+        <div class="newPost">
             <label for="title">Title</label>
             <input type="text" maxlength=20 id="new-post-title" name="title" required>
             <input type="text" id="username" name="username" value =<%= username %> hidden>
             <label for="Content"></label>
             <textarea type="text" id="new-content" name="content" required cols="40" rows="10">Write New Post.. </textarea>
-            <input class="btn post-btn" type="submit" value="Post">
-          </form>
+            <button class="btn post-btn" id="new-post-btn" type="submit" value="Post">POST</button>
+        </div>
     </div>
     <h2>Your Posts</h2>
     <div class="posts-container">
