@@ -135,6 +135,11 @@ hr{
     font-weight: 400;
     font-family: "Rubik";
 }
+.btn-outline-update:hover {
+    background-color: #378CE7;
+    color: white;
+    
+}
 
 .btn-delete{
     padding : 5px;
@@ -147,6 +152,11 @@ hr{
     font-weight: 400;
     font-family: "Rubik";
 }
+.btn.btn-delete:hover {
+    background-color: #D71313;
+    color: white;
+}
+
 .btn-delete-modal{
     background-color: #D71313;
     color: white;
