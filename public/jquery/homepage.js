@@ -4,7 +4,53 @@
 console.log("IT LOADED!!!!!");
 
 
-$(".btn-delete").on("click",function() {
+$(".btn-delete").on("click",deleteFunct);
+
+    $("#new-post-btn").on("click", async function (){
+      var usern = $("h1").attr("id");
+      var url = "/newPost";
+      var title = $("#"+"new-post-title").val();
+      var content = $("#" + "new-content").val();
+      console.log(title, content);
+      var dataPost = {
+        id: "",
+        title: title,
+        content: content,
+        username: usern
+    };
+      $.ajax({
+        type: "POST",
+        url: url,
+        data: dataPost,
+        success: function (data) {
+            console.log(data);
+           const postData = `<div id = "${data.id}" class="post-item" style="opacity: 0">
+                <div class="border-post">
+                    <h3 class="post-title">${data.title}</a></h3>
+                    <p class="post-content">${data.content}</p>
+                    <p class = "post-time">Posted on ${data.date} at ${data.time}</p>
+                    <hr>
+                    <button id = "${data.id}" type="button" class="btn btn-outline-update">Update</button>
+                    <button id = "${data.id}"  type="button" class="btn btn-delete">Delete</button>
+                </div>
+        </div>`;
+        $("#"+"new-post-title").val("");
+        $("#" + "new-content").val("Write New Post..");
+            $(".posts-container").prepend(postData);
+            $(".btn-delete").on("click",deleteFunct);
+            $(".btn-outline-update").on("click", updateFunct);
+              $("#" +  data.id ).animate({
+                opacity: 1,
+              }, 1500)
+           
+        }
+    });
+    });
+  
+
+      $(".btn-outline-update").on("click", updateFunct);
+      async function deleteFunct(){
+        
     var usern = $("h1").attr("id");
     var id = $(this).attr("id");
     console.log("Ran the delete rout");
@@ -70,49 +116,9 @@ $(".btn-delete").on("click",function() {
           
         }
       });
-    });
 
-    $("#new-post-btn").on("click", async function (){
-      var usern = $("h1").attr("id");
-      var url = "/newPost";
-      var title = $("#"+"new-post-title").val();
-      var content = $("#" + "new-content").val();
-      console.log(title, content);
-      var dataPost = {
-        id: "",
-        title: title,
-        content: content,
-        username: usern
-    };
-      $.ajax({
-        type: "POST",
-        url: url,
-        data: dataPost,
-        success: function (data) {
-            console.log(data);
-           const postData = `<div id = "${data.id}" class="post-item" style="opacity: 0">
-                <div class="border-post">
-                    <h3 class="post-title">${data.title}</a></h3>
-                    <p class="post-content">${data.content}</p>
-                    <p class = "post-time">Posted on ${data.date} at ${data.time}</p>
-                    <hr>
-                    <button id = "${data.id}" type="button" class="btn btn-outline-update">Update</button>
-                    <button id = "${data.id}"  type="button" class="btn btn-delete">Delete</button>
-                </div>
-        </div>`;
-        //$("#"+"new-post-title").val("");
-         // $("#" + "new-content").val("Write New Post..");
-            $(".posts-container").prepend(postData);
-              $("#" +  data.id ).animate({
-                opacity: 1,
-              }, 1500)
-           
-        }
-    });
-    });
-  
-
-      $(".btn-outline-update").on("click", async function (){
+      }
+      async function updateFunct(){
         var usern = $("h1").attr("id");
         var id = $(this).attr("id");
         var url = "/edit-post/" + id;
@@ -220,4 +226,5 @@ $(".btn-delete").on("click",function() {
             });
         }
         
-      });
+      };
+      
