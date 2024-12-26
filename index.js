@@ -22,6 +22,7 @@ app.get('/homepage', (req, res) => {
 
 });
 app.post('/check', (req, res) => {
+    //this route checks the password ideally a hash mechanism
     if (req.body["password"] === "I") {
     res.render(__dirname + "/views/homepage.ejs", {
         username: req.body["username"],
@@ -35,6 +36,7 @@ app.post('/check', (req, res) => {
     }
     });
 app.post('/newPost', (req, res) => {
+    //this route creates a new post on the database
     const postId = TempUsers[req.body["username"]].createPost(req.body["title"],req.body["content"]);
     res.send(postId);
 
