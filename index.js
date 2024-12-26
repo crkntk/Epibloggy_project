@@ -4,6 +4,18 @@ import { dirname } from "path";
 import { fileURLToPath } from "url";
 import {user} from './classes/user.js';
 import{post} from './classes/post.js';
+import dotenv from "dotenv";
+import mongoose from "mongoose";
+
+dotenv.config({path: './config.env'});
+
+mongoose.connect(process.env.DATABASE.replace('<db_password>',process.env.DATABASE_PASSWORD), {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
+  
+}).then(() => console.log('MongoDB Connected...'))
 const app = express();
 const port = 3000;
 app.use(bodyParser.urlencoded({ extended: true }));
