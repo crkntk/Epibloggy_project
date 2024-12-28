@@ -16,6 +16,19 @@ mongoose.connect(process.env.DATABASE.replace('<db_password>',process.env.DATABA
     useFindAndModify: false,
   
 }).then(() => console.log('MongoDB Connected...'))
+const userSchema = new mongoose.Schema({
+    username: {type: String, required: true, unique: true},
+    password: {type: String, required: true},
+    posts: [postSchema]
+});
+const postSchema = new mongoose.Schema({
+    title: {type: String, required: true},
+    content: {type: String, required: true},
+    date: {type: Date, default: Date.now},
+    time: {type: String, default: new Date().toLocaleTimeString()}
+});
+const userMod = mongoose.model('Users',userSchema );
+const postsMod = mongoose.model('Posts',postSchema );
 const app = express();
 const port = 3000;
 app.use(bodyParser.urlencoded({ extended: true }));
