@@ -18,21 +18,7 @@ mongoose.connect(process.env.DATABASE.replace('<db_password>',process.env.DATABA
     useFindAndModify: false,
   
 }).then(() => console.log('MongoDB Connected...'));
-const postSchema = new mongoose.Schema({
-    title: {type: String, required: true},
-    content: {type: String, required: [true,"A post needs content"]},
-    date: {type: Date, default: Date.now},
-    time: {type: String, default: new Date().toLocaleTimeString()}
-});
-const userSchema = new mongoose.Schema({
-    username: {type: String, required: [true,"A user needs a username"], unique: true},
-    password: {type: String, required: true},
-    email: {type: String, required: [true,"A user needs an email"], unique: true},
-    id: {type: String, default: mongoose.Types.ObjectId},
-    posts: [postSchema]
-});
-const userMod = mongoose.model('Users',userSchema );
-const postsMod = mongoose.model('Posts',postSchema );
+
 const testUser1Password = "12345test1";
 bcrypt.hash(testUser1Password,saltRounds, async (err,hash) => {
     if (err) throw err;
