@@ -7,17 +7,19 @@ import{post} from './classes/post.js';
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import bcrypt from "bcrypt";
+import './controllers/userController.js'
+import './controllers/postController.js'
 
 dotenv.config({path: './config.env'});
 const saltRounds = 10;
 
-mongoose.connect(process.env.DATABASE.replace('<db_password>',process.env.DATABASE_PASSWORD), {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-    useFindAndModify: false,
-  
-}).then(() => console.log('MongoDB Connected...'));
+//mongoose.connect(process.env.DATABASE.replace('<db_password>',process.env.DATABASE_PASSWORD), {
+//    useNewUrlParser: true,
+//    useUnifiedTopology: true,
+//    useCreateIndex: true,
+//    useFindAndModify: false,
+//  
+//}).then(() => console.log('MongoDB Connected...'));
 
 const testUser1Password = "12345test1";
 bcrypt.hash(testUser1Password,saltRounds, async (err,hash) => {
