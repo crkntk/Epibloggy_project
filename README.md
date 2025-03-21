@@ -9,7 +9,7 @@ Swilfire for deleting and updating
 Jquery for DOM manipulation, event handling, animation, and AJAX interactions
 
 Back end:
-For now we have some preintegrated data for users
+For now we have some pre-integrated data for users
 Currently working on Mongoose database implementation in a future commit
 
 To run application since we havent deployed:
