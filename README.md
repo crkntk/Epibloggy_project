@@ -2,7 +2,7 @@
 
 This is a dynamic posting project where user can sign in post and delete posts in their account.
 The alert front end Swilfire framework is used in order for swift updating and deleting of posts.
-next.js is ran in the back end.
+Express.js is ran in the back end.
 
 Front end Frameworks:
 Swilfire for deleting and updating
